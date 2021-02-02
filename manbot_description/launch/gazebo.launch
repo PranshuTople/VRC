@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<launch>
+  <param command="$(find xacro)/xacro $(find manbot_description)/urdf/manbot.xacro" name="robot_description"/>
+
+  <node args="-param robot_description -urdf -model manbot -x 1.5 -y 0.25 -z 0.055 -Y 3.1415" name="spawn_urdf" pkg="gazebo_ros" type="spawn_model"/>
+  
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="paused" value="false"/>
+    <arg name="use_sim_time" value="true"/>
+    <arg name="gui" value="true"/>
+    <arg name="headless" value="false"/>
+    <arg name="debug" value="false"/>
+    <arg name="world_name" value="$(find vrc_demo_description)/worlds/vrc_areana.world"/>
+  </include>
+
+</launch>

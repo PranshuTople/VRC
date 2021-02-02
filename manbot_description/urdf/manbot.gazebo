@@ -1,0 +1,95 @@
+<?xml version="1.0" ?>
+<robot name="manbot" xmlns:xacro="http://www.ros.org/wiki/xacro" >
+
+<xacro:property name="body_color" value="Gazebo/Silver" />
+
+<gazebo>
+  <plugin filename="libgazebo_ros_control.so" name="gazebo_ros_control">
+    <robotNamespace>/manbot</robotNamespace>
+    <robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType>
+    <legacyModeNS>true</legacyModeNS>
+  </plugin>
+</gazebo>
+
+<gazebo>
+  <plugin name="skid_steer_drive_controller" filename="libgazebo_ros_skid_steer_drive.so">
+    <updateRate>100.0</updateRate>
+    <robotNamespace>/</robotNamespace>
+    <leftFrontJoint>lf_motor</leftFrontJoint>
+    <rightFrontJoint>rf_motor</rightFrontJoint>
+    <leftRearJoint>lb_motor</leftRearJoint>
+    <rightRearJoint>rb_motor</rightRearJoint>
+    <wheelSeparation>0.270</wheelSeparation>
+    <wheelDiameter>0.175</wheelDiameter>
+    <robotBaseFrame>base_link</robotBaseFrame>
+    <torque>20</torque>
+    <topicName>/cmd_vel</topicName>
+    <broadcastTF>false</broadcastTF>
+  </plugin>
+</gazebo>
+
+<gazebo reference="base_link">
+  <material>${body_color}</material>
+  <mu1>0.2</mu1>
+  <mu2>0.2</mu2>
+  <selfCollide>true</selfCollide>
+  <gravity>true</gravity>
+</gazebo>
+
+<gazebo reference="rf_wheel_1">
+  <material>${body_color}</material>
+  <mu1>10.0</mu1>
+  <mu2>10.0</mu2>
+  <selfCollide>true</selfCollide>
+</gazebo>
+
+<gazebo reference="rb_wheel_1">
+  <material>${body_color}</material>
+  <mu1>10.0</mu1>
+  <mu2>10.0</mu2>
+  <selfCollide>true</selfCollide>
+</gazebo>
+
+<gazebo reference="lf_wheel_1">
+  <material>${body_color}</material>
+  <mu1>10.0</mu1>
+  <mu2>10.0</mu2>
+  <selfCollide>true</selfCollide>
+</gazebo>
+
+<gazebo reference="lb_wheel_1">
+  <material>${body_color}</material>
+  <mu1>10.0</mu1>
+  <mu2>10.0</mu2>
+  <selfCollide>true</selfCollide>
+</gazebo>
+
+<gazebo reference="gripper_1">
+  <material>${body_color}</material>
+  <mu1>0.2</mu1>
+  <mu2>0.2</mu2>
+  <selfCollide>true</selfCollide>
+</gazebo>
+
+<gazebo reference="gripper_camera_1">
+  <material>${body_color}</material>
+  <mu1>0.2</mu1>
+  <mu2>0.2</mu2>
+  <selfCollide>true</selfCollide>
+</gazebo>
+
+<gazebo reference="main_camera_1">
+  <material>${body_color}</material>
+  <mu1>0.2</mu1>
+  <mu2>0.2</mu2>
+  <selfCollide>true</selfCollide>
+</gazebo>
+
+<gazebo reference="finger_1">
+  <material>${body_color}</material>
+  <mu1>0.2</mu1>
+  <mu2>0.2</mu2>
+  <selfCollide>true</selfCollide>
+</gazebo>
+
+</robot>

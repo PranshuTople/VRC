@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<robot name="cube_2" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<xacro:include filename="$(find cube_description)/urdf/materials.xacro" />
+<xacro:include filename="$(find cube_description)/urdf/cube_2.gazebo" />
+<link name="cube_2">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-1.7363942367457403e-16 -1.6342533992901085e-16 0.0896611801911882"/>
+    <mass value="0.1179822399999996"/>
+    <inertia ixx="0.000674" ixy="0.0" ixz="0.0" iyy="0.000674" iyz="-0.0" izz="0.000786"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <geometry>
+      <mesh filename="package://cube_description/meshes/cube_2.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <geometry>
+      <mesh filename="package://cube_description/meshes/cube_2.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+</robot>

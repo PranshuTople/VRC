@@ -1,0 +1,15 @@
+<?xml version="1.0" ?>
+
+<launch>
+
+	<rosparam file="$(find manbot_description)/launch/controller.yaml" command="load"/>
+
+	<node args="rf_motor_position_controller rb_motor_position_controller lf_motor_position_controller lb_motor_position_controller gripper_joint_position_controller finger_joint_position_controller joint_state_controller " name="controller_spawner" ns="manbot" output="screen" pkg="controller_manager" respawn="false" type="spawner"/>
+
+	<node name="robot_state_publisher" output="screen" pkg="robot_state_publisher" respawn="false" type="robot_state_publisher">
+
+		<remap from="/joint_states" to="/manbot/joint_states"/>
+
+	</node>
+
+</launch>

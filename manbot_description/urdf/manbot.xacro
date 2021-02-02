@@ -1,0 +1,266 @@
+<?xml version="1.0" ?>
+<robot name="manbot" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<xacro:include filename="$(find manbot_description)/urdf/materials.xacro" />
+<xacro:include filename="$(find manbot_description)/urdf/manbot.trans" />
+<xacro:include filename="$(find manbot_description)/urdf/manbot.gazebo" />
+
+<link name="base_link">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-0.008294335423910686 -0.00043545826318449623 0.10129461321029191"/>
+    <mass value="4.851237574824673"/>
+    <inertia ixx="0.039908" ixy="1.8e-05" ixz="0.007946" iyy="0.067042" iyz="0.00011" izz="0.069092"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <geometry>
+      <mesh filename="package://manbot_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <geometry>
+      <mesh filename="package://manbot_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="rf_wheel_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="9.71445146547012e-17 -0.02499999999999998 -1.3877787807814457e-17"/>
+    <mass value="1.1477709799721683"/>
+    <inertia ixx="0.003419" ixy="0.0" ixz="0.0" iyy="0.005828" iyz="0.0" izz="0.003419"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.1 0.11 -0.0875"/>
+    <geometry>
+      <mesh filename="package://manbot_description/meshes/rf_wheel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.1 0.11 -0.0875"/>
+    <geometry>
+      <mesh filename="package://manbot_description/meshes/rf_wheel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="rb_wheel_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="1.249000902703301e-16 -0.02499999999999998 -1.3877787807814457e-17"/>
+    <mass value="1.1477709799721683"/>
+    <inertia ixx="0.003419" ixy="0.0" ixz="0.0" iyy="0.005828" iyz="0.0" izz="0.003419"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0.1 0.11 -0.0875"/>
+    <geometry>
+      <mesh filename="package://manbot_description/meshes/rb_wheel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0.1 0.11 -0.0875"/>
+    <geometry>
+      <mesh filename="package://manbot_description/meshes/rb_wheel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="lf_wheel_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="9.71445146547012e-17 0.024999999999999953 -1.3877787807814457e-17"/>
+    <mass value="1.1477709799721683"/>
+    <inertia ixx="0.003419" ixy="-0.0" ixz="0.0" iyy="0.005828" iyz="0.0" izz="0.003419"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.1 -0.11 -0.0875"/>
+    <geometry>
+      <mesh filename="package://manbot_description/meshes/lf_wheel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.1 -0.11 -0.0875"/>
+    <geometry>
+      <mesh filename="package://manbot_description/meshes/lf_wheel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="lb_wheel_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="0.0 0.024999999999999925 -1.3877787807814457e-17"/>
+    <mass value="1.1477709799721683"/>
+    <inertia ixx="0.003419" ixy="0.0" ixz="0.0" iyy="0.005828" iyz="-0.0" izz="0.003419"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0.1 -0.11 -0.0875"/>
+    <geometry>
+      <mesh filename="package://manbot_description/meshes/lb_wheel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0.1 -0.11 -0.0875"/>
+    <geometry>
+      <mesh filename="package://manbot_description/meshes/lb_wheel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="gripper_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="0.0286434200634247 -0.017913622514405973 0.2176105087984376"/>
+    <mass value="0.9981920145300498"/>
+    <inertia ixx="0.012661" ixy="0.000785" ixz="-0.002548" iyy="0.011825" iyz="0.002275" izz="0.002701"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.0 0.0025 -0.15"/>
+    <geometry>
+      <mesh filename="package://manbot_description/meshes/gripper_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.0 0.0025 -0.15"/>
+    <geometry>
+      <mesh filename="package://manbot_description/meshes/gripper_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="gripper_camera_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-0.021242645786247964 -2.27373675443231e-17 0.013416407864998758"/>
+    <mass value="0.09812500000000042"/>
+    <inertia ixx="2.5e-05" ixy="-0.0" ixz="8e-06" iyy="2.1e-05" iyz="-0.0" izz="3.7e-05"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0.02 -0.0 -0.355"/>
+    <geometry>
+      <mesh filename="package://manbot_description/meshes/gripper_camera_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0.02 -0.0 -0.355"/>
+    <geometry>
+      <mesh filename="package://manbot_description/meshes/gripper_camera_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="main_camera_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="0.019445436482630196 0.0 0.015909902576697388"/>
+    <mass value="0.09812500000000007"/>
+    <inertia ixx="3.1e-05" ixy="0.0" ixz="-1e-05" iyy="2.1e-05" iyz="-0.0" izz="3.1e-05"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0.15 -0.0 -0.475"/>
+    <geometry>
+      <mesh filename="package://manbot_description/meshes/main_camera_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0.15 -0.0 -0.475"/>
+    <geometry>
+      <mesh filename="package://manbot_description/meshes/main_camera_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="finger_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="0.05354104886173708 0.0024999999999996414 0.05708207388161585"/>
+    <mass value="0.2632971732049946"/>
+    <inertia ixx="0.000404" ixy="0.0" ixz="-0.00018" iyy="0.000538" iyz="0.0" izz="0.000134"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.013541 -0.08 -0.422082"/>
+    <geometry>
+      <mesh filename="package://manbot_description/meshes/finger_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.013541 -0.08 -0.422082"/>
+    <geometry>
+      <mesh filename="package://manbot_description/meshes/finger_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<joint name="rf_motor" type="continuous">
+  <origin rpy="0 0 0" xyz="0.1 -0.11 0.0875"/>
+  <parent link="base_link"/>
+  <child link="rf_wheel_1"/>
+  <axis xyz="0.0 1.0 0.0"/>
+</joint>
+
+<joint name="rb_motor" type="continuous">
+  <origin rpy="0 0 0" xyz="-0.1 -0.11 0.0875"/>
+  <parent link="base_link"/>
+  <child link="rb_wheel_1"/>
+  <axis xyz="0.0 1.0 0.0"/>
+</joint>
+
+<joint name="lf_motor" type="continuous">
+  <origin rpy="0 0 0" xyz="0.1 0.11 0.0875"/>
+  <parent link="base_link"/>
+  <child link="lf_wheel_1"/>
+  <axis xyz="-0.0 1.0 0.0"/>
+</joint>
+
+<joint name="lb_motor" type="continuous">
+  <origin rpy="0 0 0" xyz="-0.1 0.11 0.0875"/>
+  <parent link="base_link"/>
+  <child link="lb_wheel_1"/>
+  <axis xyz="-0.0 1.0 0.0"/>
+</joint>
+
+
+<joint name="gripper_joint" type="revolute">
+  <origin rpy="0 0 0" xyz="0.0 -0.0025 0.15"/>
+  <parent link="base_link"/>
+  <child link="gripper_1"/>
+  <axis xyz="-0.0 1.0 0.0"/>
+  <limit effort="100" lower="-0.261799" upper="1.570796" velocity="100"/>
+</joint>
+<!--
+<joint name="gripper_joint" type ="fixed">
+  <origin rpy="0 0 0" xyz="0.0 -0.0025 0.15"/>
+  <parent link="base_link"/>
+  <child link="gripper_1"/>
+</joint>
+-->
+<joint name="gripper_camera_joint" type="fixed">
+  <origin rpy="0 0 0" xyz="-0.02 0.0025 0.205"/>
+  <parent link="gripper_1"/>
+  <child link="gripper_camera_1"/>
+</joint>
+
+<joint name="main_camera_joint" type="fixed">
+  <origin rpy="0 0 0" xyz="-0.15 0.0 0.475"/>
+  <parent link="base_link"/>
+  <child link="main_camera_1"/>
+</joint>
+
+<joint name="finger_joint" type="revolute">
+  <origin rpy="0 0 0" xyz="0.013541 0.0825 0.272082"/>
+  <parent link="gripper_1"/>
+  <child link="finger_1"/>
+  <axis xyz="0.894427 0.0 -0.447214"/>
+  <limit effort="100" lower="-1.570796" upper="1.570796" velocity="100"/>
+</joint>
+<!--
+<joint name="finger_joint" type ="fixed">
+  <origin rpy="0 0 0" xyz="0.013541 0.0825 0.272082"/>
+  <parent link="gripper_1"/>
+  <child link="finger_1"/>
+</joint>
+-->
+</robot>

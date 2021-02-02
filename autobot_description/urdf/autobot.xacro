@@ -1,0 +1,354 @@
+<?xml version="1.0" ?>
+<robot name="autobot" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<xacro:include filename="$(find autobot_description)/urdf/materials.xacro" />
+<xacro:include filename="$(find autobot_description)/urdf/autobot.trans" />
+<xacro:include filename="$(find autobot_description)/urdf/autobot.gazebo" />
+<link name="base_link">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-0.009568145355348395 -1.0098438175876538e-16 0.054020432435981744"/>
+    <mass value="0.2864000453601699"/>
+    <inertia ixx="0.000861" ixy="0.0" ixz="-2.9e-05" iyy="0.001138" iyz="-0.0" izz="0.001424"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <geometry>
+      <mesh filename="package://autobot_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <geometry>
+      <mesh filename="package://autobot_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="right_wheel_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="0.0 -0.009620772373434651 0.0"/>
+    <mass value="0.08667330868237295"/>
+    <inertia ixx="3.7e-05" ixy="0.0" ixz="0.0" iyy="7e-05" iyz="-0.0" izz="3.7e-05"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0.0475 0.055 -0.04"/>
+    <geometry>
+      <mesh filename="package://autobot_description/meshes/right_wheel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0.0475 0.055 -0.04"/>
+    <geometry>
+      <mesh filename="package://autobot_description/meshes/right_wheel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="left_wheel_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="0.0 0.009620772373434651 0.0"/>
+    <mass value="0.08667330868237297"/>
+    <inertia ixx="3.7e-05" ixy="-0.0" ixz="0.0" iyy="7e-05" iyz="0.0" izz="3.7e-05"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0.0475 -0.055 -0.04"/>
+    <geometry>
+      <mesh filename="package://autobot_description/meshes/left_wheel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0.0475 -0.055 -0.04"/>
+    <geometry>
+      <mesh filename="package://autobot_description/meshes/left_wheel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="caster_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="1.3877787807814457e-17 2.4232797573055368e-18 -0.006071428571428568"/>
+    <mass value="0.028771752719126516"/>
+    <inertia ixx="1e-06" ixy="0.0" ixz="0.0" iyy="1e-06" iyz="0.0" izz="1e-06"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.0625 -0.0 -0.015"/>
+    <geometry>
+      <mesh filename="package://autobot_description/meshes/caster_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.0625 -0.0 -0.015"/>
+    <geometry>
+      <mesh filename="package://autobot_description/meshes/caster_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="battery_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="0.0 0.0 0.015"/>
+    <mass value="0.5651999999999999"/>
+    <inertia ixx="0.000344" ixy="0.0" ixz="-0.0" iyy="8.5e-05" iyz="0.0" izz="0.000344"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.0625 -0.0 -0.025"/>
+    <geometry>
+      <mesh filename="package://autobot_description/meshes/battery_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.0625 -0.0 -0.025"/>
+    <geometry>
+      <mesh filename="package://autobot_description/meshes/battery_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="forward_sensor_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="0.0025000000000000022 0.0 0.0"/>
+    <mass value="0.00785"/>
+    <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.09 -0.0 -0.1"/>
+    <geometry>
+      <mesh filename="package://autobot_description/meshes/forward_sensor_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.09 -0.0 -0.1"/>
+    <geometry>
+      <mesh filename="package://autobot_description/meshes/forward_sensor_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="box_sensor_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="0.0024999999999999883 0.0 0.000999999999999987"/>
+    <mass value="0.00785"/>
+    <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0.088 -0.0 -0.1"/>
+    <geometry>
+      <mesh filename="package://autobot_description/meshes/box_sensor_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0.088 -0.0 -0.1"/>
+    <geometry>
+      <mesh filename="package://autobot_description/meshes/box_sensor_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="color_sensor_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="0.0 -1.7763568394002505e-17 -0.0024999999999999988"/>
+    <mass value="0.003925"/>
+    <inertia ixx="0.0" ixy="-0.0" ixz="0.0" iyy="0.0" iyz="-0.0" izz="0.0"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.0975 0.0 -0.02"/>
+    <geometry>
+      <mesh filename="package://autobot_description/meshes/color_sensor_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.0975 0.0 -0.02"/>
+    <geometry>
+      <mesh filename="package://autobot_description/meshes/color_sensor_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="middle_sensor_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="0.0 -1.7763568394002505e-17 -0.0024999999999999988"/>
+    <mass value="0.003925"/>
+    <inertia ixx="0.0" ixy="-0.0" ixz="0.0" iyy="0.0" iyz="-0.0" izz="0.0"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.0175 0.0 -0.02"/>
+    <geometry>
+      <mesh filename="package://autobot_description/meshes/middle_sensor_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.0175 0.0 -0.02"/>
+    <geometry>
+      <mesh filename="package://autobot_description/meshes/middle_sensor_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="left_sensor_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="0.0 0.0 -0.0024999999999999988"/>
+    <mass value="0.003925"/>
+    <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.0175 -0.03 -0.02"/>
+    <geometry>
+      <mesh filename="package://autobot_description/meshes/left_sensor_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.0175 -0.03 -0.02"/>
+    <geometry>
+      <mesh filename="package://autobot_description/meshes/left_sensor_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="right_sensor_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="0.0 0.0 -0.0024999999999999988"/>
+    <mass value="0.003925"/>
+    <inertia ixx="0.0" ixy="-0.0" ixz="0.0" iyy="0.0" iyz="-0.0" izz="0.0"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.0175 0.03 -0.02"/>
+    <geometry>
+      <mesh filename="package://autobot_description/meshes/right_sensor_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.0175 0.03 -0.02"/>
+    <geometry>
+      <mesh filename="package://autobot_description/meshes/right_sensor_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="extreme_left_sensor_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="0.0 0.0 -0.0024999999999999988"/>
+    <mass value="0.003925"/>
+    <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.0175 -0.06 -0.02"/>
+    <geometry>
+      <mesh filename="package://autobot_description/meshes/extreme_left_sensor_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.0175 -0.06 -0.02"/>
+    <geometry>
+      <mesh filename="package://autobot_description/meshes/extreme_left_sensor_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="extreme_right_sensor_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="0.0 0.0 -0.0024999999999999988"/>
+    <mass value="0.003925"/>
+    <inertia ixx="0.0" ixy="-0.0" ixz="0.0" iyy="0.0" iyz="-0.0" izz="0.0"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.0175 0.06 -0.02"/>
+    <geometry>
+      <mesh filename="package://autobot_description/meshes/extreme_right_sensor_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.0175 0.06 -0.02"/>
+    <geometry>
+      <mesh filename="package://autobot_description/meshes/extreme_right_sensor_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<joint name="right_motor" type="continuous">
+  <origin rpy="0 0 0" xyz="-0.0475 -0.055 0.04"/>
+  <parent link="base_link"/>
+  <child link="right_wheel_1"/>
+  <axis xyz="0.0 -1.0 0.0"/>
+</joint>
+
+<joint name="left_motor" type="continuous">
+  <origin rpy="0 0 0" xyz="-0.0475 0.055 0.04"/>
+  <parent link="base_link"/>
+  <child link="left_wheel_1"/>
+  <axis xyz="0.0 1.0 0.0"/>
+</joint>
+
+<joint name="caster_joint" type="fixed">
+  <origin rpy="0 0 0" xyz="0.0625 0.0 0.015"/>
+  <parent link="base_link"/>
+  <child link="caster_1"/>
+</joint>
+
+<joint name="battery_joint" type="fixed">
+  <origin rpy="0 0 0" xyz="0.0625 0.0 0.025"/>
+  <parent link="base_link"/>
+  <child link="battery_1"/>
+</joint>
+
+<joint name="frontsensor_joint" type="fixed">
+  <origin rpy="0 0 0" xyz="0.09 0.0 0.1"/>
+  <parent link="base_link"/>
+  <child link="forward_sensor_1"/>
+</joint>
+
+<joint name="boxsensor_joint" type="fixed">
+  <origin rpy="0 0 0" xyz="-0.088 0.0 0.1"/>
+  <parent link="base_link"/>
+  <child link="box_sensor_1"/>
+</joint>
+
+<joint name="colorsensor_joint" type="fixed">
+  <origin rpy="0 0 0" xyz="0.0975 0.0 0.02"/>
+  <parent link="base_link"/>
+  <child link="color_sensor_1"/>
+</joint>
+
+<joint name="middlesensor_joint" type="fixed">
+  <origin rpy="0 0 0" xyz="0.0175 0.0 0.02"/>
+  <parent link="base_link"/>
+  <child link="middle_sensor_1"/>
+</joint>
+
+<joint name="leftsensor_joint" type="fixed">
+  <origin rpy="0 0 0" xyz="0.0175 0.03 0.02"/>
+  <parent link="base_link"/>
+  <child link="left_sensor_1"/>
+</joint>
+
+<joint name="rightsensor_joint" type="fixed">
+  <origin rpy="0 0 0" xyz="0.0175 -0.03 0.02"/>
+  <parent link="base_link"/>
+  <child link="right_sensor_1"/>
+</joint>
+
+<joint name="extremeleftsensor_joint" type="fixed">
+  <origin rpy="0 0 0" xyz="0.0175 0.06 0.02"/>
+  <parent link="base_link"/>
+  <child link="extreme_left_sensor_1"/>
+</joint>
+
+<joint name="extremerightsensor_joint" type="fixed">
+  <origin rpy="0 0 0" xyz="0.0175 -0.06 0.02"/>
+  <parent link="base_link"/>
+  <child link="extreme_right_sensor_1"/>
+</joint>
+
+</robot>
