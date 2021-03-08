@@ -1,9 +1,9 @@
 <?xml version='1.0'?>
 <sdf version='1.6'>
-  <model name='demo_areana'>
+  <model name='demo_area'>
     <link name='link_0'>
       <inertial>
-        <mass>1000</mass>
+        <mass>1</mass>
         <inertia>
           <ixx>0.166667</ixx>
           <ixy>0</ixy>
@@ -16,14 +16,14 @@
       </inertial>
       <pose frame=''>0 0 0 0 -0 0</pose>
       <gravity>1</gravity>
-      <self_collide>0</self_collide>
-      <kinematic>0</kinematic>
+      <self_collide>1</self_collide>
+      <kinematic>1</kinematic>
       <enable_wind>0</enable_wind>
       <visual name='visual'>
         <pose frame=''>0 0 0 0 -0 0</pose>
         <geometry>
           <mesh>
-            <uri>/home/pranshutople/catkin_ws/src/New_VRC/demo_areana/models/demo_areana/vrc_demo.dae</uri>
+            <uri>model://demo_area/meshes/vrc_demo.dae</uri>
             <scale>1 1 1</scale>
           </mesh>
         </geometry>
@@ -36,7 +36,7 @@
         <pose frame=''>0 0 0 0 -0 0</pose>
         <geometry>
           <mesh>
-            <uri>/home/pranshutople/catkin_ws/src/New_VRC/demo_areana/models/demo_areana/vrc_demo.dae</uri>
+            <uri>model://demo_area/meshes/vrc_demo.dae</uri>
             <scale>1 1 1</scale>
           </mesh>
         </geometry>

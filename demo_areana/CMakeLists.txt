@@ -11,6 +11,7 @@ find_package(catkin REQUIRED COMPONENTS
   roscpp
   rospy
   std_msgs
+  gazebo_ros
 )
 
 ## System dependencies are found with CMake's conventions
@@ -105,8 +106,8 @@ find_package(catkin REQUIRED COMPONENTS
 catkin_package(
 #  INCLUDE_DIRS include
 #  LIBRARIES demo_areana
-#  CATKIN_DEPENDS roscpp rospy std_msgs
-#  DEPENDS system_lib
+   CATKIN_DEPENDS roscpp rospy std_msgs gazebo_ros
+   DEPENDS system_lib gazebo
 )
 
 ###########
@@ -118,6 +119,7 @@ catkin_package(
 include_directories(
 # include
   ${catkin_INCLUDE_DIRS}
+  ${GAZEBO_INCLUDE_DIRS}
 )
 
 ## Declare a C++ library
