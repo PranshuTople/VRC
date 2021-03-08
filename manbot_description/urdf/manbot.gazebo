@@ -66,8 +66,8 @@
 
 <gazebo reference="gripper_1">
   <material>${body_color}</material>
-  <mu1>0.2</mu1>
-  <mu2>0.2</mu2>
+  <mu1>1000.0</mu1>
+  <mu2>1000.0</mu2>
   <selfCollide>true</selfCollide>
 </gazebo>
 
@@ -87,9 +87,15 @@
 
 <gazebo reference="finger_1">
   <material>${body_color}</material>
-  <mu1>0.2</mu1>
-  <mu2>0.2</mu2>
+  <mu1>1000.0</mu1>
+  <mu2>1000.0</mu2>
   <selfCollide>true</selfCollide>
 </gazebo>
+
+
+ <gazebo reference="finger_joint_tran">
+    <implicitSpringDamper>1</implicitSpringDamper>
+</gazebo>
+
 
 </robot>

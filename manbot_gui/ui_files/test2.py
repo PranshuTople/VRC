@@ -18,13 +18,12 @@ class Ui_Form(object):
 
         def valuechange():
             size = self.horizontalSlider.value()
-            msg=float(size)/100
+            msg= size/1000.0
             pubslide1.publish(msg)
 
         def valuechange_2():
             size2 = self.horizontalSlider_2.value()
-            msg2=float(size2)/100
-            print(msg2)
+            msg2= size2/1000.0
             pubslide2.publish(msg2)
 
         Form.setObjectName("Form")
@@ -41,8 +40,8 @@ class Ui_Form(object):
         self.horizontalLayout.addItem(spacerItem)
         self.horizontalSlider = QtWidgets.QSlider(self.verticalLayoutWidget)
         self.horizontalSlider.setMinimumSize(QtCore.QSize(250, 0))
-        self.horizontalSlider.setMinimum(-157)
-        self.horizontalSlider.setMaximum(157)
+        self.horizontalSlider.setMinimum(-1571)
+        self.horizontalSlider.setMaximum(1571)
         self.horizontalSlider.setSingleStep(1)
         self.horizontalSlider.setProperty("value", 0)
         self.horizontalSlider.setSliderPosition(0)
@@ -59,8 +58,8 @@ class Ui_Form(object):
         self.horizontalLayout_2.addItem(spacerItem2)
         self.horizontalSlider_2 = QtWidgets.QSlider(self.verticalLayoutWidget)
         self.horizontalSlider_2.setMinimumSize(QtCore.QSize(250, 0))
-        self.horizontalSlider_2.setMinimum(-26)
-        self.horizontalSlider_2.setMaximum(157)
+        self.horizontalSlider_2.setMinimum(-262)
+        self.horizontalSlider_2.setMaximum(1571)
         self.horizontalSlider_2.setProperty("value", 0)
         self.horizontalSlider_2.setSliderPosition(0)
         self.horizontalSlider_2.setOrientation(QtCore.Qt.Horizontal)

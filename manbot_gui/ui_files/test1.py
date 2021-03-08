@@ -2,7 +2,7 @@
 
 import rospy
 from std_msgs.msg import Bool
-from std_msgs.msg import Int16
+from std_msgs.msg import Float64
 from PyQt5 import QtCore, QtGui, QtWidgets
 
 class Ui_Form(object):
@@ -18,7 +18,7 @@ class Ui_Form(object):
 
         def valuechange():
             size = self.horizontalSlider.value()
-            msg=size
+            msg = size/1000.0
             pubslide1.publish(msg)
 
 
@@ -37,8 +37,9 @@ class Ui_Form(object):
         self.horizontalLayout.addItem(spacerItem)
         self.horizontalSlider = QtWidgets.QSlider(self.verticalLayoutWidget)
         self.horizontalSlider.setMinimumSize(QtCore.QSize(250, 0))
-        self.horizontalSlider.setMaximum(180)
-        self.horizontalSlider.setSliderPosition(90)
+        self.horizontalSlider.setMinimum(-262)
+        self.horizontalSlider.setMaximum(1571)
+        self.horizontalSlider.setSliderPosition(0)
         self.horizontalSlider.setOrientation(QtCore.Qt.Horizontal)
         self.horizontalSlider.setObjectName("horizontalSlider")
         self.horizontalLayout.addWidget(self.horizontalSlider)
@@ -92,7 +93,7 @@ if __name__ == "__main__":
     import sys
     
     pub = rospy.Publisher('/button',Bool,queue_size=1)
-    pubslide1 = rospy.Publisher('/slider1',Int16,queue_size=1)
+    pubslide1 = rospy.Publisher('/manbot/gripper_joint_position_controller/command',Float64,queue_size=1)
     rospy.init_node('test1', anonymous=True)
     
     app = QtWidgets.QApplication(sys.argv)

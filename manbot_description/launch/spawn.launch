@@ -12,7 +12,7 @@
 		<arg name="gui" value="true"/>
 		<arg name="headless" value="false"/>
 		<arg name="debug" value="false"/>
-		<arg name="world_name" value="$(find vrc_demo_description)/worlds/vrc_areana.world"/>
+		<arg name="world_name" value="$(find demo_areana)/worlds/demoworld.world"/>
 	</include>
 
 	<rosparam file="$(find manbot_description)/launch/controller.yaml" command="load"/>

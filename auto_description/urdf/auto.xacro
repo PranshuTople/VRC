@@ -1,0 +1,192 @@
+<?xml version="1.0" ?>
+<robot name="auto" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<xacro:include filename="$(find auto_description)/urdf/materials.xacro" />
+<xacro:include filename="$(find auto_description)/urdf/auto.trans" />
+<xacro:include filename="$(find auto_description)/urdf/auto.gazebo" />
+<link name="base_link">
+  <inertial>
+    <origin rpy="0 0 0" xyz="5.798151942778149e-05 1.3428573475664087e-17 0.04382723792061693"/>
+    <mass value="0.3589600882128054"/>
+    <inertia ixx="0.000588" ixy="-0.0" ixz="0.0" iyy="0.000685" iyz="-0.0" izz="0.000809"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <geometry>
+      <mesh filename="package://auto_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <geometry>
+      <mesh filename="package://auto_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="wheel_right_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-6.938893903907228e-18 -0.009999999999999988 -6.938893903907228e-18"/>
+    <mass value="0.3082687791334984"/>
+    <inertia ixx="5.8e-05" ixy="0.0" ixz="-0.0" iyy="9.6e-05" iyz="0.0" izz="5.8e-05"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.025 0.04 -0.025"/>
+    <geometry>
+      <mesh filename="package://auto_description/meshes/wheel_right_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.025 0.04 -0.025"/>
+    <geometry>
+      <mesh filename="package://auto_description/meshes/wheel_right_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="wheel_left_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-6.938893903907228e-18 0.010000000000000002 -6.938893903907228e-18"/>
+    <mass value="0.3082687791334984"/>
+    <inertia ixx="5.8e-05" ixy="0.0" ixz="-0.0" iyy="9.6e-05" iyz="0.0" izz="5.8e-05"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.025 -0.04 -0.025"/>
+    <geometry>
+      <mesh filename="package://auto_description/meshes/wheel_left_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.025 -0.04 -0.025"/>
+    <geometry>
+      <mesh filename="package://auto_description/meshes/wheel_left_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="caster_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-6.273939701095799e-13 0.0 -0.00425000000000003"/>
+    <mass value="0.005137812985558175"/>
+    <inertia ixx="0.0" ixy="0.0" ixz="0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0.04 -0.0 -0.01"/>
+    <geometry>
+      <mesh filename="package://auto_description/meshes/caster_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0.04 -0.0 -0.01"/>
+    <geometry>
+      <mesh filename="package://auto_description/meshes/caster_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="camera_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-0.0007879318613192368 -8.528479810766139e-14 0.010000000197105362"/>
+    <mass value="0.021347484202033667"/>
+    <inertia ixx="1e-06" ixy="-0.0" ixz="-0.0" iyy="1e-06" iyz="-0.0" izz="1e-06"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.05 -0.0 -0.04"/>
+    <geometry>
+      <mesh filename="package://auto_description/meshes/camera_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.05 -0.0 -0.04"/>
+    <geometry>
+      <mesh filename="package://auto_description/meshes/camera_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="box_sensor_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="0.0025000000000000022 0.0 0.0"/>
+    <mass value="0.003925"/>
+    <inertia ixx="0.0" ixy="0.0" ixz="-0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0.0675 -0.0 -0.085"/>
+    <geometry>
+      <mesh filename="package://auto_description/meshes/box_sensor_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0.0675 -0.0 -0.085"/>
+    <geometry>
+      <mesh filename="package://auto_description/meshes/box_sensor_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="door_sensor_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="0.0024999999999999883 0.0 0.0"/>
+    <mass value="0.003925"/>
+    <inertia ixx="0.0" ixy="0.0" ixz="-0.0" iyy="0.0" iyz="0.0" izz="0.0"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.07 -0.0 -0.0825"/>
+    <geometry>
+      <mesh filename="package://auto_description/meshes/door_sensor_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.07 -0.0 -0.0825"/>
+    <geometry>
+      <mesh filename="package://auto_description/meshes/door_sensor_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<joint name="motor_right" type="continuous">
+  <origin rpy="0 0 0" xyz="0.025 -0.04 0.025"/>
+  <parent link="base_link"/>
+  <child link="wheel_right_1"/>
+  <axis xyz="0.0 1.0 0.0"/>
+</joint>
+
+<joint name="motor_left" type="continuous">
+  <origin rpy="0 0 0" xyz="0.025 0.04 0.025"/>
+  <parent link="base_link"/>
+  <child link="wheel_left_1"/>
+  <axis xyz="0.0 1.0 0.0"/>
+</joint>
+
+<joint name="Rigid3" type="fixed">
+  <origin rpy="0 0 0" xyz="-0.04 0.0 0.01"/>
+  <parent link="base_link"/>
+  <child link="caster_1"/>
+</joint>
+
+<joint name="Rigid4" type="fixed">
+  <origin rpy="0 1.0472 0" xyz="0.05 0.0 0.04"/>
+  <parent link="base_link"/>
+  <child link="camera_1"/>
+</joint>
+
+<joint name="Rigid5" type="fixed">
+  <origin rpy="0 0 0" xyz="-0.0675 0.0 0.085"/>
+  <parent link="base_link"/>
+  <child link="box_sensor_1"/>
+</joint>
+
+<joint name="Rigid6" type="fixed">
+  <origin rpy="0 0 0" xyz="0.07 0.0 0.0825"/>
+  <parent link="base_link"/>
+  <child link="door_sensor_1"/>
+</joint>
+
+</robot>
