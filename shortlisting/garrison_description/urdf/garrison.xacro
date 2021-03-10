@@ -1,0 +1,57 @@
+<?xml version="1.0" ?>
+<robot name="garrison" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<xacro:include filename="$(find garrison_description)/urdf/materials.xacro" />
+<xacro:include filename="$(find garrison_description)/urdf/garrison.trans" />
+<xacro:include filename="$(find garrison_description)/urdf/garrison.gazebo" />
+<link name="base_link">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-0.03642857142857139 0.0 0.185"/>
+    <mass value="9.299136"/>
+    <inertia ixx="0.539239" ixy="0.0" ixz="0.0" iyy="0.330178" iyz="0.0" izz="0.499156"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <geometry>
+      <mesh filename="package://garrison_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <geometry>
+      <mesh filename="package://garrison_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="gate_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-0.006938435940099907 -0.26898097089505413 -0.16499999999999998"/>
+    <mass value="1.9616639999999996"/>
+    <inertia ixx="0.061972" ixy="0.001178" ixz="-0.0" iyy="0.017241" iyz="0.0" izz="0.045438"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.195 -0.255 -0.35"/>
+    <geometry>
+      <mesh filename="package://garrison_description/meshes/gate_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.195 -0.255 -0.35"/>
+    <geometry>
+      <mesh filename="package://garrison_description/meshes/gate_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<joint name="Rev1" type="revolute">
+  <origin rpy="0 0 0" xyz="0.195 0.255 0.35"/>
+  <parent link="base_link"/>
+  <child link="gate_1"/>
+  <axis xyz="0.0 0.0 1.0"/>
+  <limit effort="100" lower="0.0" upper="3.141593" velocity="100"/>
+</joint>
+
+</robot>

@@ -1,0 +1,57 @@
+<?xml version="1.0" ?>
+<robot name="launchpad" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<xacro:include filename="$(find launchpad_description)/urdf/materials.xacro" />
+<xacro:include filename="$(find launchpad_description)/urdf/launchpad.trans" />
+<xacro:include filename="$(find launchpad_description)/urdf/launchpad.gazebo" />
+<link name="base_link">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-0.04295315682281059 0.0 0.23795315682281057"/>
+    <mass value="92.50439999999999"/>
+    <inertia ixx="3.705359" ixy="0.0" ixz="-0.210402" iyy="3.00491" iyz="0.0" izz="3.779502"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <geometry>
+      <mesh filename="package://launchpad_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <geometry>
+      <mesh filename="package://launchpad_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="slider_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="0.1902935657048615 -1.0418920458268021e-16 0.021909136890474683"/>
+    <mass value="2.483654550875743"/>
+    <inertia ixx="0.026627" ixy="-0.0" ixz="-2e-05" iyy="0.030151" iyz="-0.0" izz="0.055012"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.2 -0.0 -0.01"/>
+    <geometry>
+      <mesh filename="package://launchpad_description/meshes/slider_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.2 -0.0 -0.01"/>
+    <geometry>
+      <mesh filename="package://launchpad_description/meshes/slider_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<joint name="Slider1" type="prismatic">
+  <origin rpy="0 0 0" xyz="0.2 0.0 0.01"/>
+  <parent link="base_link"/>
+  <child link="slider_1"/>
+  <axis xyz="-1.0 0.0 0.0"/>
+  <limit effort="100" lower="0.0" upper="0.38" velocity="100"/>
+</joint>
+
+</robot>

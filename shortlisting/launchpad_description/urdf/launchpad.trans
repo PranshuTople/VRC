@@ -1,0 +1,15 @@
+<?xml version="1.0" ?>
+<robot name="launchpad" xmlns:xacro="http://www.ros.org/wiki/xacro" >
+
+<transmission name="Slider1_tran">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="Slider1">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="Slider1_actr">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+</robot>

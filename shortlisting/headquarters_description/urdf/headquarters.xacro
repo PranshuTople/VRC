@@ -1,0 +1,86 @@
+<?xml version="1.0" ?>
+<robot name="headquarters" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<xacro:include filename="$(find headquarters_description)/urdf/materials.xacro" />
+<xacro:include filename="$(find headquarters_description)/urdf/headquarters.trans" />
+<xacro:include filename="$(find headquarters_description)/urdf/headquarters.gazebo" />
+<link name="base_link">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-0.03670847750865052 0.0 0.1417084775086505"/>
+    <mass value="13.611899999999999"/>
+    <inertia ixx="0.341869" ixy="0.0" ixz="-0.019591" iyy="0.242235" iyz="0.0" izz="0.454118"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <geometry>
+      <mesh filename="package://headquarters_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <geometry>
+      <mesh filename="package://headquarters_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="left_door_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="0.0025000000000000022 0.08479817756433952 0.0"/>
+    <mass value="0.5312487499999979"/>
+    <inertia ixx="0.001556" ixy="0.0" ixz="0.0" iyy="0.000272" iyz="0.0" izz="0.001286"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.175 0.18 -0.1025"/>
+    <geometry>
+      <mesh filename="package://headquarters_description/meshes/left_door_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.175 0.18 -0.1025"/>
+    <geometry>
+      <mesh filename="package://headquarters_description/meshes/left_door_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="right_door_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="0.0025000000000000022 -0.0847981775643395 0.0"/>
+    <mass value="0.5312487499999979"/>
+    <inertia ixx="0.001556" ixy="0.0" ixz="0.0" iyy="0.000272" iyz="-0.0" izz="0.001286"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.175 -0.18 -0.1025"/>
+    <geometry>
+      <mesh filename="package://headquarters_description/meshes/right_door_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.175 -0.18 -0.1025"/>
+    <geometry>
+      <mesh filename="package://headquarters_description/meshes/right_door_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<joint name="Rev1" type="revolute">
+  <origin rpy="0 0 0" xyz="0.175 -0.18 0.1025"/>
+  <parent link="base_link"/>
+  <child link="left_door_1"/>
+  <axis xyz="0.0 0.0 1.0"/>
+  <limit effort="100" lower="0.0" upper="1.570796" velocity="100"/>
+</joint>
+
+<joint name="Rev2" type="revolute">
+  <origin rpy="0 0 0" xyz="0.175 0.18 0.1025"/>
+  <parent link="base_link"/>
+  <child link="right_door_1"/>
+  <axis xyz="0.0 0.0 -1.0"/>
+  <limit effort="100" lower="0.0" upper="1.570796" velocity="100"/>
+</joint>
+
+</robot>
